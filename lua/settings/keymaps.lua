@@ -67,7 +67,7 @@ keymap.set('n', 'J', 'mzJ`z', opts)
 -- select entire file with CTRL + A
 keymap.set('n', '<C-a>', 'ggVG', opts)
 
--- indent and outdent lines quickly
+    -- indent and outdent lines quickly
 keymap.set('n', '<TAB>', '>>', opts)
 keymap.set('n', '<S-TAB>', '<<', opts)
 
