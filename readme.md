@@ -4,4 +4,4 @@
 - Nodejs for markdown preview
 
 ## Refrences
-Highly inspired from this (config)[https://github.com/kevinfengcs88/nvim]. Almost like, it's the same with few exceptions.
+Highly inspired from this [config](https://github.com/kevinfengcs88/nvim). It's almost same with few exceptions.
