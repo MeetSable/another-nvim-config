@@ -8,8 +8,8 @@ return {
         end
 
         hardtime.setup({
-            disabled_filetypes = { "qf", "netrw", "NvimTree", "lazy", "mason", "oil" },
+			disabled_filetypes = { "qf", "netrw", "NvimTree", "lazy", "mason", "oil" },
             max_time = 0,
-        })
+		})
     end
 }
