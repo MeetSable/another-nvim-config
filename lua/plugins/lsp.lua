@@ -38,11 +38,13 @@ return {
             lsp.setup_nvim_cmp({
                 select_behavior = 'insert'
             })
-
-            local navic = require('nvim-navic')
+			local navic = require('nvim-navic')
 
             lsp.on_attach(function(client, bufnr)
-                lsp.default_keymaps({buffer = bufnr})
+                lsp.default_keymaps({
+					buffer = bufnr,
+					preserve_mappings = false
+				})
                 if client.server_capabilities.documentSymbolProvider then
                     navic.attach(client, bufnr)
                 end
@@ -51,11 +53,18 @@ return {
             require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
 
             lsp.ensure_installed({
-                --'pyright',
+                -- 'pyright',
                 'lua_ls',
-                --'gopls',
+                -- 'gopls',
                 'clangd'
             })
+
+			require('mason-lspconfig').setup({
+				ensure_installed = {},
+				handlers = {
+					lsp.default_setup,
+				}
+			})
 
             lsp.setup()
 
@@ -69,13 +78,6 @@ return {
                 sources = {
                     { name = 'nvim_lsp' },
                     { name = 'luasnip' },
-                },
-                mapping = {
-                    ['<C-b>'] = cmp.mapping.scroll_docs(-4),
-                    ['<C-f>'] = cmp.mapping.scroll_docs(4),
-                    ['<C-Space>'] = cmp.mapping.complete(),
-                    ['<C-e>'] = cmp.mapping.abort(),
-                    ['<CR>'] = cmp.mapping.confirm({ select = true })
                 },
                 window = {
                     completion = cmp.config.window.bordered(),
