@@ -72,7 +72,6 @@ return {
     		vim.keymap.set('n', '<Leader>lp', function() require('dap').set_breakpoint(nil, nil, vim.fn.input('Log point message: ')) end, {desc="Set LogPoint"})
     		vim.keymap.set('n', '<Leader>dr', function() require('dap').repl.open() end)
     		vim.keymap.set('n', '<Leader>dl', function() require('dap').run_last() end)
-			require('dapui').setup()
 			vim.keymap.set('n', '<Leader>db',
 				function()
 					require('dapui').toggle()

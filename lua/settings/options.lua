@@ -38,3 +38,11 @@ for option, value in pairs(powershell_options) do
 end
 
 set.clipboard = 'unnamedplus'
+
+-- neovide settings
+if vim.g.neovide then
+	vim.o.guifont = "JetBrainsMono Nerd Font Mono:h10"
+	vim.g.neovide_hide_mouse_when_typing = true
+	vim.g.neovide_cursor_vfx_mode = "wireframe"
+	vim.g.neovide_fullscree = true
+end

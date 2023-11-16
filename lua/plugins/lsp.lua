@@ -34,7 +34,11 @@ return {
         },
         config = function()
 
-            local lsp = require('lsp-zero').preset({})
+            local lsp = require('lsp-zero').preset({
+				name = 'minimal',
+				set_lsp_keymaps = true,
+				manage_nvim_cmp = true,
+			})
             lsp.setup_nvim_cmp({
                 select_behavior = 'insert'
             })

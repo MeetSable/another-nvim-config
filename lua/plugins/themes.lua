@@ -1,7 +1,8 @@
 return {
     {'marko-cerovac/material.nvim'},
     {'Mofiqul/vscode.nvim'},
-    {'luisiacc/gruvbox-baby'},
+	{'morhetz/gruvbox'},
     {'folke/tokyonight.nvim'},
-    {'catppuccin/nvim'}
+    {'catppuccin/nvim'},
+	{'navarasu/onedark.nvim'},
 }
