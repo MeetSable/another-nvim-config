@@ -30,6 +30,7 @@ return {
 
 				tree.setup({
 						on_attach = my_on_attach,
+						sync_root_with_cwd = true,
 						view = {
 								adaptive_size = true,
 						},

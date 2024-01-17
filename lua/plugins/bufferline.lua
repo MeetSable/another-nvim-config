@@ -16,7 +16,7 @@ return {
                         text_align = 'center'
                     }
                 },
-                separator_style = 'slant',
+                separator_style = "slope",
                 hover = {
                     enabled = true,
                     delay = 0,

@@ -38,11 +38,18 @@ for option, value in pairs(powershell_options) do
 end
 
 set.clipboard = 'unnamedplus'
+set.inccommand = ''
 
 -- neovide settings
 if vim.g.neovide then
 	vim.o.guifont = "JetBrainsMono Nerd Font Mono:h10"
 	vim.g.neovide_hide_mouse_when_typing = true
+	vim.g.neovide_remember_window_size = true
 	vim.g.neovide_cursor_vfx_mode = "wireframe"
-	vim.g.neovide_fullscree = true
+	vim.g.neovide_cursor_vfx_mode = "torpedo"
+	vim.keymap.set('v', '<D-c>', '"+y') -- Copy
+	vim.keymap.set('n', '<D-v>', '"+P') -- Paste normal mode
+	vim.keymap.set('v', '<D-v>', '"+P') -- Paste visual mode
+	vim.keymap.set('c', '<D-v>', '<C-R>+') -- Paste command mode
+	vim.keymap.set('i', '<D-v>', '<ESC>l"+Pli') -- Paste insert mode
 end

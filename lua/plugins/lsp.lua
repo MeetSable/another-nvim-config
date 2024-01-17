@@ -30,13 +30,13 @@ return {
             { 'hrsh7th/nvim-cmp' },
             { 'hrsh7th/cmp-nvim-lsp' },
             { 'L3MON4D3/LuaSnip' },
-            { 'SmiteshP/nvim-navic' }
+            { 'SmiteshP/nvim-navic' },
+			{ 'ervandew/supertab'}
         },
         config = function()
 
             local lsp = require('lsp-zero').preset({
 				name = 'minimal',
-				set_lsp_keymaps = true,
 				manage_nvim_cmp = true,
 			})
             lsp.setup_nvim_cmp({
@@ -73,7 +73,7 @@ return {
             lsp.setup()
 
             local cmp = require('cmp')
-            -- local cmp_action = require('lsp-zero').cmp_action()
+            local cmp_action = require('lsp-zero').cmp_action()
 
             require('luasnip.loaders.from_vscode').lazy_load()
 
@@ -91,9 +91,12 @@ return {
                     expand = function(args)
                         require('luasnip').lsp_expand(args.body)
                     end
-                }
+                },
+				mapping = cmp.mapping.preset.insert({
+					['<Tab>'] = cmp_action.tab_complete(),
+					['<S-Tab>'] = cmp_action.select_prev_or_fallback(),
+				})
             })
-
         end
     },
     { 'saadparwaiz1/cmp_luasnip' },
