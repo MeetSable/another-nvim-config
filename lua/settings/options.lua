@@ -33,8 +33,12 @@ local powershell_options = {
   shellxquote = "",
 }
 
-for option, value in pairs(powershell_options) do
-  set[option] = value
+if vim.fn.has('win32') == 1 then
+	for option, value in pairs(powershell_options) do
+	set[option] = value
+	end
+elseif vim.fn.has('linux') == 1 then
+	set.shell = 'bash'
 end
 
 set.clipboard = 'unnamedplus'

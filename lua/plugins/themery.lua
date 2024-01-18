@@ -7,6 +7,12 @@ return {
         if not status_ok then
             return
         end
+		local themeConfig
+		if vim.fn.has('win32') == 1 then
+			themeConfig = "~\\AppData\\Local\\nvim\\lua\\settings\\colorscheme.lua"
+		elseif vim.fn.has('linux') == 1 then
+			themeConfig = "~/.config/nvim/lua/settings/colorscheme.lua"
+		end
 
         themery.setup({
             themes = {
@@ -55,7 +61,7 @@ return {
 					before = [[vim.opt.background = "dark"]]
 				},
             },
-            themeConfigFile = "~\\AppData\\Local\\nvim\\lua\\settings\\colorscheme.lua",
+			themeConfigFile = themeConfig,
             livePreview = true,
         })
     end
