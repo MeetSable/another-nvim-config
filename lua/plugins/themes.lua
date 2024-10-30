@@ -5,4 +5,6 @@ return {
     {'folke/tokyonight.nvim'},
     {'catppuccin/nvim'},
 	{'navarasu/onedark.nvim'},
+	{'andreasvc/vim-256noir'},
+	{'luisiacc/gruvbox-baby'},
 }

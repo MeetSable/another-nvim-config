@@ -8,11 +8,11 @@ return {
             return
         end
 		local themeConfig
-		if vim.fn.has('win32') == 1 then
-			themeConfig = "~\\AppData\\Local\\nvim\\lua\\settings\\colorscheme.lua"
-		elseif vim.fn.has('linux') == 1 then
-			themeConfig = "~/.config/nvim/lua/settings/colorscheme.lua"
-		end
+		-- if vim.fn.has('win32') == 1 then
+		-- 	themeConfig = "~\\AppData\\Local\\nvim\\lua\\settings\\colorscheme.lua"
+		-- elseif vim.fn.has('linux') == 1 then
+		-- 	themeConfig = "~/.config/nvim/lua/settings/colorscheme.lua"
+		-- end
 
         themery.setup({
             themes = {
@@ -38,6 +38,13 @@ return {
 					]]
                 },
 				{
+					name = 'gruvbox baby',
+					colorscheme = 'gruvbox-baby',
+					before = [[
+						vim.g.gruvbox_baby_telescope_theme = 1
+					]]
+				},
+				{
 					name = 'gruvbox light',
 					colorscheme = 'gruvbox',
 					before = [[
@@ -60,6 +67,10 @@ return {
 					colorscheme = 'onedark',
 					before = [[vim.opt.background = "dark"]]
 				},
+				{
+					name = 'mono dark',
+					colorscheme = '256_noir'
+				}
             },
 			themeConfigFile = themeConfig,
             livePreview = true,
