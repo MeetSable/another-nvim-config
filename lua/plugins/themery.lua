@@ -1,20 +1,9 @@
 return {
-
     'zaldih/themery.nvim',
     cmd = 'Themery',
+	lazy = false,
     config = function()
-        local status_ok, themery = pcall(require, 'themery')
-        if not status_ok then
-            return
-        end
-		local themeConfig
-		-- if vim.fn.has('win32') == 1 then
-		-- 	themeConfig = "~\\AppData\\Local\\nvim\\lua\\settings\\colorscheme.lua"
-		-- elseif vim.fn.has('linux') == 1 then
-		-- 	themeConfig = "~/.config/nvim/lua/settings/colorscheme.lua"
-		-- end
-
-        themery.setup({
+            require("themery").setup({
             themes = {
                 {
                     name = 'material',
@@ -72,7 +61,7 @@ return {
 					colorscheme = '256_noir'
 				}
             },
-			themeConfigFile = themeConfig,
+			-- themeConfigFile = themeConfig,
             livePreview = true,
         })
     end
